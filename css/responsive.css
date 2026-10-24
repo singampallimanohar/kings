@@ -1,0 +1,350 @@
+/* ==========================================================================
+   Kings Biryani's and Family Restaurant - Responsive Stylesheet
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Mobile Navigation Drawer
+   -------------------------------------------------------------------------- */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background: #1a1a1a;
+  border-right: 1.5px solid var(--gold-primary);
+  box-shadow: 15px 0 45px rgba(0,0,0,0.9);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.open {
+  transform: translateX(0);
+}
+
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--brown-border);
+  margin-bottom: 1.75rem;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobile-nav-link {
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.mobile-nav-link i {
+  color: var(--gold-primary);
+  width: 20px;
+  font-size: 0.95rem;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--gold-light);
+  background: rgba(201, 164, 92, 0.08);
+}
+
+.mobile-nav-actions {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--brown-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   Tablets & Below (<= 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-highlights-row {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 580px;
+    margin: 1.5rem auto 0;
+    text-align: left;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-images-composite {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dishes-grid,
+  .signature-dishes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Medium Tablets & Mobile Landscape (<= 868px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 868px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .header-whatsapp-btn span {
+    display: none;
+  }
+
+  .menu-search-filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .menu-search-box {
+    max-width: 100%;
+  }
+
+  .dietary-filter-toggle {
+    width: 100%;
+    display: flex;
+  }
+
+  .diet-filter-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  .menu-controls-wrapper {
+    border-radius: var(--radius-lg);
+    top: calc(var(--header-height) + 0.25rem);
+  }
+
+  .reviews-carousel-track {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Smartphones & Small Screens (<= 640px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  section {
+    padding: 4.5rem 0;
+  }
+
+  .container {
+    padding: 0 1.1rem;
+  }
+
+  /* Hero */
+  .hero-section {
+    padding-top: calc(var(--header-height) + 1.5rem);
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-whatsapp,
+  .hero-cta-group .btn-outline-gold {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-highlights-row {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 1rem 1.1rem;
+    max-width: 100%;
+  }
+
+  .hero-badge-pill {
+    font-size: 0.78rem;
+    text-align: center;
+  }
+
+  /* About */
+  .about-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-img-main {
+    width: 100%;
+    height: 300px;
+  }
+
+  .about-img-secondary {
+    display: none;
+  }
+
+  /* Menu */
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dishes-grid,
+  .signature-dishes-grid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .menu-controls-wrapper {
+    position: static;
+    border-radius: var(--radius-lg);
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+  }
+
+  .gallery-item {
+    height: 175px;
+  }
+
+  /* Contact */
+  .enquiry-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-actions-row {
+    flex-direction: column;
+  }
+
+  .contact-actions-row .btn-primary,
+  .contact-actions-row .btn-outline-gold,
+  .contact-actions-row .btn-whatsapp {
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  /* Floating */
+  .floating-whatsapp-btn {
+    bottom: 16px;
+    left: 16px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .floating-actions-container {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .floating-cart-pill {
+    padding: 0.6rem 0.95rem;
+    font-size: 0.85rem;
+  }
+
+  /* Cart Drawer */
+  .cart-drawer {
+    max-width: 100%;
+  }
+
+  /* Lightbox */
+  .lightbox-modal {
+    padding: 0.75rem;
+  }
+
+  .lightbox-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  /* Page Banner */
+  .page-banner {
+    padding-top: calc(var(--header-height) + 2.5rem);
+    padding-bottom: 2.5rem;
+  }
+
+  /* Sections */
+  .section-title {
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
+  }
+
+  /* Reviews */
+  .reviews-carousel-track {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Very Small Phones (<= 380px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .brand-name {
+    font-size: 1.1rem;
+  }
+
+  .brand-crown-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    height: 220px;
+  }
+
+  .hero-badge-pill {
+    font-size: 0.72rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
